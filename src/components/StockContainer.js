@@ -1,11 +1,15 @@
 import React from "react";
 import Stock from "./Stock";
 
-function StockContainer() {
+function StockContainer({ stocks, addStock }) {
+
+  const stocksArray = stocks.map((stock, i) => <Stock stock={stock} addStock={addStock} key={i}/>)
+
   return (
     <div>
       <h2>Stocks</h2>
-      {/* render stock list here*/}
+        { stocksArray }
+        {console.log(stocks)}
     </div>
   );
 }
